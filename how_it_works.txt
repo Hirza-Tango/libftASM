@@ -1,0 +1,10 @@
+rax: temp register that must hold syscall number before call
+	also must be filled with return value
+
+64 bit register order:
+
+rdi: 1st argument
+rsi: 2nd argument
+rdx: 3rd argument
+rcx: ...
+rbx: ...
