@@ -13,12 +13,11 @@ _ft_isalpha:
 	jl false		; return false
 	cmp edi, 0x7B	; if less than 'z' + 1
 	jl true			; return true
-	jmp false		; return false
-
-true:
-	mov eax, 1	; return value 1
-	ret			; return
 
 false:
 	mov eax, 0	; return value 0
+	ret			; return
+
+true:
+	mov eax, 1	; return value 1
 	ret			; return

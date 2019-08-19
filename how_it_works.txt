@@ -8,3 +8,18 @@ rsi: 2nd argument
 rdx: 3rd argument
 rcx: ...
 rbx: ...
+
+32 bit Registers:
+%eax accumulator
+%edx data
+%ecx count
+%ebx base
+%ebp frame base pointer
+%esi source index
+%edi dest index
+%esp stack pointer
+
+16 bit: remove e
+64 bit: replace e with r
+8 bit low: remove e and replace x with l
+8 bit high: remove e and replace x with h

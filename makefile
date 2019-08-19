@@ -4,7 +4,9 @@ CFLAGS=-c -Wall -Wextra -Werror -Ofast
 ASMC=nasm
 ASMFLAGS=-fMACHO64
 ASMDIR=src
-ASMFILES=ft_isalpha.s
+ASMFILES=	ft_isalpha.s	ft_isdigit.s	ft_isalnum.s	ft_isascii.s	\
+			ft_isprint.s	ft_toupper.s	ft_tolower.s	ft_bzero.s		\
+			ft_strcat.s		ft_puts.s
 OBJ=$(ASMFILES:%.s=build/%.o)
 
 $(NAME): $(OBJ)

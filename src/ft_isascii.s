@@ -9,12 +9,11 @@ _ft_isascii:
 	jl false		; return false
 	cmp rdi, 0x80	; if less than 255 + 1
 	jl true			; return true
-	jmp false		; return false
-
-true:
-	mov rax, 1	; return value 1
-	ret			; return
 
 false:
 	mov rax, 0	; return value 0
+	ret			; return
+
+true:
+	mov rax, 1	; return value 1
 	ret			; return
