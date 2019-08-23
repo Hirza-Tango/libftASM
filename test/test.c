@@ -104,15 +104,30 @@ int main() {
 	puts("\nSame buffer, with ft_bzero n = 10");
 	for (int i = 0; i < 10; i++)
 		printf("%i ", buffer[i]);
-	puts("\nft_strcat:");
+	puts("\n\nft_strcat:");
 	memcpy(buffer, "hi", 3);
 	printf("Buffer: %s\n", buffer);
 	buffer = ft_strcat(buffer, " there");
 	printf("Buffer after copy: %s\n", buffer);
-	puts("ft_puts:");
-	puts("System puts...\n");
-	ft_puts("My puts...\n");
-
-
+	puts("\nft_puts:");
+	ft_puts("I'm putting a string!");
+	puts("Testing null string...");
+	ft_puts(0);
+	puts("\nft_strlen:");
+	puts("string: Hello there");
+	print_test("Hello there", strlen("Hello there"), ft_strlen("Hello there"));
+	print_test("a", strlen("a"), ft_strlen("a"));
+	print_test("\\0", strlen(""), ft_strlen(""));
+	puts("\nft_memset:");
+	memset(buffer, ' ', 10);
+	ft_memset(buffer, 'a', 0);
+	puts("Buffer filled with spaces (32), with ft_memset n = 0, c = 'a'");
+	for (int i = 0; i < 10; i++)
+		printf("%i ", buffer[i]);
+	ft_memset(buffer, 'a', 10);
+	puts("\nSame buffer, with ft_memset n = 10, c = 'b'");
+	for (int i = 0; i < 10; i++)
+		printf("%i ", buffer[i]);
+	puts("");
 	return 0;
 }
