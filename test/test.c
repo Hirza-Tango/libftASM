@@ -2,14 +2,15 @@
 #include <printf.h>
 #include <string.h>
 #include <stdlib.h>
+#include <sys/syscall.h>
+#include <fcntl.h>
 
-void	print_test(char *test, int sys, int mine)
+static void	print_test(char *test, int sys, int mine)
 {
 	printf(
 		"Test with '%s':\tsys:%x\tmine:%x\n", test, sys, mine
 	);
 }
-
 
 int main() {
 	puts("LibftASM test:\n");
@@ -128,6 +129,22 @@ int main() {
 	puts("\nSame buffer, with ft_memset n = 10, c = 'b'");
 	for (int i = 0; i < 10; i++)
 		printf("%i ", buffer[i]);
-	puts("");
+	puts("\n\nft_memcpy:");
+	bzero(buffer, 10);
+	ft_memcpy(buffer, "Success !", 10);
+	puts(buffer);
+	ft_memcpy(buffer, "hello", 0);
+	puts(buffer);
+	puts("\nft_strdup:");
+	char *dup = ft_strdup(buffer);
+	if (dup == buffer)
+		puts("new area not allocated!");
+	else
+		puts("Regions are different");
+	puts(buffer);
+	puts(dup);
+	puts("\nft_cat:");
+	int fd = open("test.txt", O_RDONLY);
+	ft_cat(fd);
 	return 0;
 }
