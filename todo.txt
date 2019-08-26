@@ -1,0 +1,5 @@
+abs()
+memchr()
+memcmp()
+putc()
+strcpy()
