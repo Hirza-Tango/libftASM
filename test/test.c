@@ -146,5 +146,9 @@ int main() {
 	puts("\nft_cat:");
 	int fd = open("test.txt", O_RDONLY);
 	ft_cat(fd);
+	puts("\nft_abs:");
+	print_test("0", abs(0), ft_abs(0));
+	print_test("1", abs(1), ft_abs(1));
+	print_test("-42", abs(-42), abs(-42));
 	return 0;
 }
